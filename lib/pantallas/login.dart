@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minimal_chat_app/auth/auth_service.dart';
 import 'package:minimal_chat_app/componentes/my_button.dart';
 import 'package:minimal_chat_app/componentes/my_textfield.dart';
 
@@ -16,8 +17,25 @@ class Login extends StatelessWidget {
     });
 
   //metodo login
-  void login() {
-
+  void login(BuildContext context) async{
+    //servicio de autenticacion
+    final authService = AuthService();
+    //try
+    try{
+      await authService.signInWithEmailPassword(
+        _emailController.text,
+        _pwController.text,
+      );
+    }
+    //catch error
+    catch(e){
+      showDialog(
+        context:context,
+        builder: (context) => AlertDialog(
+          title: Text(e.toString())
+        ),
+      );
+    }
   }
 
 
@@ -52,6 +70,7 @@ class Login extends StatelessWidget {
               
             ),
             const SizedBox(height: 10),
+
             // password textfaild
             MyTextfield(
               password: true,
@@ -60,12 +79,14 @@ class Login extends StatelessWidget {
 
             ),
             const SizedBox(height: 25),
+
             //login button
             my_button(
               text: "Iniciar Seccion",
-              onTap: login,
+              onTap: () => login(context),
               ),
               const SizedBox(height: 25),
+            
             //register now
             Row(
               mainAxisAlignment: MainAxisAlignment.center,

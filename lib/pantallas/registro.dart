@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:minimal_chat_app/auth/auth_service.dart';
 import 'package:minimal_chat_app/componentes/my_button.dart';
 import 'package:minimal_chat_app/componentes/my_textfield.dart';
 
@@ -17,8 +18,32 @@ class ResgistroPage extends StatelessWidget {
     required this.onTap,
     });
   //metodo de registro
-  void register() {
-
+  void register(BuildContext context) {
+    //registro
+    final _auth = AuthService();
+//confirmacion de contraceñas para la creacion de un usuario
+    if (_pwController.text == _confpwController.text){
+      try{
+        _auth.signUpWithEmailPassword(
+          _emailController.text,
+          _pwController.text,
+        );
+      }catch(e){
+        showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: Text(e.toString()),
+          ),
+        );
+      }
+    }else{
+      //las contraceñas no coincidieron
+      showDialog(
+        context: context,
+        builder: (context) => const AlertDialog(
+          title: Text("Las contraceñas no coinciden")),
+      );
+    }
   }
   @override
   Widget build(BuildContext context) {
@@ -76,7 +101,7 @@ class ResgistroPage extends StatelessWidget {
             //login button
             my_button(
               text: "Registrame",
-              onTap: register,
+              onTap: () => register(context),
             ),
             const SizedBox(height: 25),
 
