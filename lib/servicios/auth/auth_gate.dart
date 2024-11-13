@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:minimal_chat_app/auth/login_or_registrer.dart';
+import 'package:minimal_chat_app/servicios/auth/login_or_registrer.dart';
 import 'package:minimal_chat_app/pantallas/home_page.dart';
 
 class AuthGate extends StatelessWidget {
@@ -17,7 +17,7 @@ class AuthGate extends StatelessWidget {
             return Inicio();
           }
           else{
-            return LoginOrRegistrer();
+            return const LoginOrRegistrer();
           }
         }
         )
