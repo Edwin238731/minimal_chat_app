@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "35029866995",
+    "project_id": "minimalchadapp",
+    "storage_bucket": "minimalchadapp.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35029866995:android:c09aa523471a8d85995a86",
+        "android_client_info": {
+          "package_name": "com.minimalchadapp.minimal_chat_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClhhRtWPEfbp_pM3gLpENzO3zIHN1w-jU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
