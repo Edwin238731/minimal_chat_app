@@ -66,7 +66,7 @@ class Login extends StatelessWidget {
             MyTextfield(
               password: false,
               placeholder: 'Email',
-              controler:_emailController,
+              controller:_emailController,
               
             ),
             const SizedBox(height: 10),
@@ -75,13 +75,13 @@ class Login extends StatelessWidget {
             MyTextfield(
               password: true,
               placeholder: 'Contraceña',
-              controler:_pwController,
+              controller:_pwController,
 
             ),
             const SizedBox(height: 25),
 
             //login button
-            my_button(
+            MyButton(
               text: "Iniciar Seccion",
               onTap: () => login(context),
               ),

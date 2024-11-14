@@ -77,7 +77,7 @@ class ResgistroPage extends StatelessWidget {
             MyTextfield(
               password: false,
               placeholder: 'Email',
-              controler: _emailController,
+              controller: _emailController,
             ),
             const SizedBox(height: 25),
 
@@ -85,7 +85,7 @@ class ResgistroPage extends StatelessWidget {
             MyTextfield(
               password: true,
               placeholder: 'Contraceña',
-              controler: _pwController,
+              controller: _pwController,
             ),
             const SizedBox(height: 10),
 
@@ -93,13 +93,13 @@ class ResgistroPage extends StatelessWidget {
             MyTextfield(
               password: true,
               placeholder: 'Confirma tu contraceña',
-              controler: _confpwController,
+              controller: _confpwController,
             ),
             const SizedBox(height: 25),
 
             
             //login button
-            my_button(
+            MyButton(
               text: "Registrame",
               onTap: () => register(context),
             ),

@@ -59,6 +59,7 @@ class Inicio extends StatelessWidget {
             MaterialPageRoute(
               builder: (context) => ChatPage(
                 getemail:  userData["email"],
+                receiverID: userData["uid"],
                 ),
               )
             );
