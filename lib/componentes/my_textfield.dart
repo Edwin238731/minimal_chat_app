@@ -4,12 +4,14 @@ class MyTextfield extends StatelessWidget {
   final String  placeholder;
   final bool password;
   final TextEditingController controller;
+  final FocusNode? focusNode;
   
   const MyTextfield({
     super.key,
     required this.placeholder,
     required this.password,
     required this.controller,
+    this.focusNode,
   });
 
   @override
@@ -17,8 +19,9 @@ class MyTextfield extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 25.0),
       child: TextField(
-        obscureText: password,
+        obscureText: password/*odscure text*/,
         controller: controller,
+        focusNode: focusNode,
         decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Theme.of(context).colorScheme.tertiary),
