@@ -63,7 +63,7 @@ class _ChatPageState extends State<ChatPage> {
   }
 
   //scroll controller
-  final ScrollController _scrollController = new ScrollController();
+  final ScrollController _scrollController = ScrollController();
 
   void scrollDown(){
     _scrollController.animateTo(
