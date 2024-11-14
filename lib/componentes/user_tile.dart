@@ -20,10 +20,13 @@ class UserTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
 
       ),
+      margin: const EdgeInsetsDirectional.symmetric(vertical: 5, horizontal:25),
+      padding: EdgeInsets.all(4),
       child: Row(
         children: [
           // icon
-          Icon(Icons.person),
+          const Icon(Icons.person),
+          const SizedBox(width: 25,),
           // nombre de usuario
           Text(text),
           ],

@@ -6,11 +6,11 @@ import 'package:minimal_chat_app/servicios/auth/auth_service.dart';
 import 'package:minimal_chat_app/servicios/chat/chat_service.dart';
 
 class Inicio extends StatelessWidget {
-   Inicio({super.key});
+  Inicio({super.key});
 
    // chat y auth service
-   final ChatService _chatService = ChatService();
-   final AuthService _authService = AuthService();
+  final ChatService _chatService = ChatService();
+  final AuthService _authService = AuthService();
   
   @override
   Widget build(BuildContext context) {
@@ -29,36 +29,45 @@ class Inicio extends StatelessWidget {
     return StreamBuilder(
       stream: _chatService.getUsersStream(),
       builder: (context, snapshot){
+        //error
         if (snapshot.hasError){
           return const Text("error");
         }
-
+        //loading...
         if(snapshot.connectionState == ConnectionState.waiting){
-          return const Text("error");
+          return const Text("loading...");
         }
-
+        //Return list review
         return ListView(
-          children: snapshot.data!.map<Widget>((userData) => _buildUserListItem(userData, context))
+          children: snapshot.data!
+          .map<Widget>((userData) => _buildUserListItem(userData, context))
           .toList(),
         );
       }
       );
   }
+    // build individual list tile for  user
+  Widget _buildUserListItem(
+    Map<String, dynamic> userData, BuildContext context) {
+      if(userData["email"] != _authService.getCurrentUser()!.email){
+        return UserTile(
+        text: userData["email"],
+        onTap: (){
+                    //ir al chat => chat_page
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ChatPage(
+                getemail:  userData["email"],
+                ),
+              )
+            );
+          },
+        );
+      }else{
+        return Container(
 
-  Widget _buildUserListItem(Map<String,dynamic> userData, BuildContext context){
-    return UserTile(
-      text: userData["email"],
-      onTap: (){
-                  //ir al chat
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ChatPage(
-              getemail:  userData["email"],
-            ),
-            )
-          );
-        },
-    );
+        );
+      }
   }
 }

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class ChatPage extends StatelessWidget {
   final String getemail;
+  
   const ChatPage({
     super.key,
     required this.getemail,
