@@ -1,8 +1,25 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.0' // o la última versión recomendada
+        classpath 'com.google.gms:google-services:4.3.15' // Asegúrate de incluir este classpath si usas servicios de Google
+    }
+}
+
 allprojects {
     repositories {
         google()
         mavenCentral()
     }
+}
+
+ext {
+    minSdkVersion = 23
+    targetSdkVersion = 33 // ajusta según tus necesidades
+    compileSdkVersion = 33 // ajusta según tus necesidades
 }
 
 rootProject.buildDir = "../build"

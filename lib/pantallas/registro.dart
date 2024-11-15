@@ -20,11 +20,11 @@ class ResgistroPage extends StatelessWidget {
   //metodo de registro
   void register(BuildContext context) {
     //registro
-    final _auth = AuthService();
+    final auth = AuthService();
 //confirmacion de contraceñas para la creacion de un usuario
     if (_pwController.text == _confpwController.text){
       try{
-        _auth.signUpWithEmailPassword(
+        auth.signUpWithEmailPassword(
           _emailController.text,
           _pwController.text,
         );

@@ -9,7 +9,7 @@ class ChatPage extends StatefulWidget {
   final String getemail;
   final String receiverID;
 
-  ChatPage({
+  const ChatPage({
     super.key,
     required this.getemail,
     required this.receiverID,
@@ -28,7 +28,7 @@ class _ChatPageState extends State<ChatPage> {
   final AuthService _authService = AuthService();
 
   //For textfield focus
-  FocusNode _focusNode = FocusNode();
+  final FocusNode _focusNode = FocusNode();
 
   @override
   void initState() {
