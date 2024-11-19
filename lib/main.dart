@@ -1,13 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:minimal_chat_app/servicios/auth/auth_gate.dart';
-//import 'package:minimal_chat_app/auth/login_or_registrer.dart';
 import 'package:minimal_chat_app/firebase_options.dart';
-//import 'package:minimal_chat_app/pantallas/login.dart';
-//import 'package:minimal_chat_app/temas/light_mode.dart';
 import 'package:minimal_chat_app/temas/theme_provider.dart';
 import 'package:provider/provider.dart';
-//import 'package:minimal_chat_app/temas/dark_mode.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
