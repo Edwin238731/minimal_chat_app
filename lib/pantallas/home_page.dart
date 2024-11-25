@@ -54,7 +54,7 @@ class Inicio extends StatelessWidget {
   Widget _buildUserListItem(
     Map<String, dynamic> userData, BuildContext context) {
       if(userData["email"] != _authService.getCurrentUser()!.email){
-        return UserTile(
+        return UserTile(//aqui se llama al user tile y da el estilo
         text: userData["email"],
         onTap: (){
                     //ir al chat => chat_page

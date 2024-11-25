@@ -40,6 +40,7 @@ class _ChatPageState extends State<ChatPage> {
         //cause a delay so that the keybooard has time to show up
         //then the amount of remaining space will be calculated,
         // then scroll down
+        //se genera un retaso al scroll del texto cuando aparece el teclado
         Future.delayed(
           const Duration (milliseconds: 500),
           () => scrollDown(),
