@@ -16,6 +16,13 @@ class SettingsPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.grey,
         elevation: 0,
+          leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          tooltip: 'Regresar', // Texto en español
+          onPressed: () {
+            Navigator.pop(context); // Función para regresar
+          },
+        ),
       ),
       body: Container(
         decoration: BoxDecoration(

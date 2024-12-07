@@ -41,7 +41,7 @@ class ResgistroPage extends StatelessWidget {
       showDialog(
         context: context,
         builder: (context) => const AlertDialog(
-          title: Text("Las contraceñas no coinciden")),
+          title: Text("Las contraseñas no coinciden")),
       );
     }
   }
@@ -84,7 +84,7 @@ class ResgistroPage extends StatelessWidget {
             // password textfaild
             MyTextfield(
               password: true,
-              placeholder: 'Contraceña',
+              placeholder: 'Contraseña',
               controller: _pwController,
             ),
             const SizedBox(height: 10),
@@ -92,7 +92,7 @@ class ResgistroPage extends StatelessWidget {
             //Confirmacion password textfaild
             MyTextfield(
               password: true,
-              placeholder: 'Confirma tu contraceña',
+              placeholder: 'Confirma tu contraseña',
               controller: _confpwController,
             ),
             const SizedBox(height: 25),
@@ -116,7 +116,7 @@ class ResgistroPage extends StatelessWidget {
                 GestureDetector(
                   onTap: onTap,
                   child: Text(
-                    "Inicia Sección Ahora",
+                    "Inicia Seción Ahora",
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.primary,

@@ -20,14 +20,14 @@ class Login extends StatelessWidget {
   void login(BuildContext context) async{
     //servicio de autenticacion
     final authService = AuthService();
-    //try
+    //try usado para capturar errores
     try{
       await authService.signInWithEmailPassword(
         _emailController.text,
         _pwController.text,
       );
     }
-    //catch error
+    //*catch error, si hay un error el catch lo refleja*/
     catch(e){
       showDialog(
         context:context,
@@ -74,7 +74,7 @@ class Login extends StatelessWidget {
             // password textfaild
             MyTextfield(
               password: true,
-              placeholder: 'Contraceña',
+              placeholder: 'Contraseña',
               controller:_pwController,
 
             ),
@@ -82,7 +82,7 @@ class Login extends StatelessWidget {
 
             //login button
             MyButton(
-              text: "Iniciar Seccion",
+              text: "Iniciar Seción",
               onTap: () => login(context),
               ),
               const SizedBox(height: 25),

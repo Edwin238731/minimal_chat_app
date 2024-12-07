@@ -11,10 +11,11 @@ class Inicio extends StatelessWidget {
    // chat y auth service
   final ChatService _chatService = ChatService();
   final AuthService _authService = AuthService();
-  
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       backgroundColor: Theme.of(context).colorScheme.surface,
       appBar: AppBar(
         title: const Text("Bienvenido"),
@@ -22,6 +23,14 @@ class Inicio extends StatelessWidget {
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.grey,
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          tooltip: 'Abrir menú de navegación', // Texto en español
+          onPressed: () {
+            _scaffoldKey.currentState
+                ?.openDrawer(); // Abrimos el drawer manualmente
+          },
+        ),
       ),
       drawer: const MyDrawer(),
       body: _buildUserList(),

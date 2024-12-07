@@ -98,6 +98,13 @@ class _ChatPageState extends State<ChatPage> {
         backgroundColor: Colors.transparent,
         foregroundColor: Colors.grey,
         elevation: 0,
+          leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          tooltip: 'Regresar', // Texto en español
+          onPressed: () {
+            Navigator.pop(context); // Función para regresar
+          },
+        ),
       ),
       body: Column(
         children: [
@@ -145,7 +152,7 @@ class _ChatPageState extends State<ChatPage> {
     //is current user
     bool isCurrentUser = data ['senderID'] == _authService.getCurrentUser()!.uid;
 
-    //align menssage to the rigth if sender id the current user, otherwise left
+    //alinear los mensajes del lado correcto
     var alignment =
         isCurrentUser ? Alignment.centerRight : Alignment.centerLeft;
 
@@ -173,7 +180,7 @@ class _ChatPageState extends State<ChatPage> {
           //textfield should take up most of the space
           Expanded(
             child: MyTextfield(
-              placeholder: "Type a message",
+              placeholder: "Escribe tu mensage",
               password: false,
               controller: _messageController,
               focusNode: _focusNode,
